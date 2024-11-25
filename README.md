@@ -6,6 +6,8 @@ I think I more or less implemented the spec as required, although I'm probably n
 
 My output format was somewhat random. I thought it would be handy to include the record metadata, so I threw that in but left the timestamp out so the tests would produce more consistent results. I prevaricated over how to represent the record in the server response. I tried out encoding it as embedded JSON, but for some reason I couldn't quickly figure out it rendered score as an Int instead of a Decimal so I left it rendering an escaped string instead. I left the code to render as embedded JSON commented out.
 
+I could have created a single Kafka Consumer that is reused on every HTTP request but it isn't thread safe so the small amount of extra work to create a new one for each request felt important to do.
+
 ## Instructions to run tests
 
 My tests assume that the following have been run locally,
@@ -32,7 +34,8 @@ sbt "runMain cta.app.CtaConsumerServer"
 
 - The code has a much lower test coverage than I would normally be happy with. The Kafka Java Clients are tricky. I think it would be possible to write good tests against mocks of them but I basically ran out of time. I put one test in to demonstrate the direction I could have taken the tests. 
 - I hardcoded a number of things (eg partition count, server location) instead of using the admin api or allowing configuration to be injected
-
+- I'm not doing any input validation. There are lots of inputs which would break the server, eg negative numbers.
+- I'm not doing any error handling except printing the error and returning a generic response. In a production server I would take more care with how i log errors and potentially return slightly more helpful error responses.
 
 ## Performance Notes
 
