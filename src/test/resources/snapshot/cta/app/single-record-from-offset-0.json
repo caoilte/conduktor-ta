@@ -1,0 +1,12 @@
+{
+  "ctRoot" : [
+    {
+      "metadata" : {
+        "partition" : 0,
+        "offset" : 0,
+        "key" : "368YCC2THQH1HEAQ"
+      },
+      "value" : "{\n  \"_id\" : \"368YCC2THQH1HEAQ\",\n  \"name\" : \"Kiana Yoo\",\n  \"dob\" : \"2021-05-31\",\n  \"address\" : {\n    \"street\" : \"2745 Shaftsbury Circle\",\n    \"town\" : \"Slough\",\n    \"postode\" : \"LS67 1ID\"\n  },\n  \"telephone\" : \"+39-3380-033-155\",\n  \"pets\" : [\n    \"Sadie\",\n    \"Rosie\"\n  ],\n  \"score\" : 3.7,\n  \"email\" : \"palma14@hotmail.com\",\n  \"url\" : \"http://earth.com\",\n  \"description\" : \"strips rt administrators composer mumbai warranty tribunal excited halo costumes surgery series spare ticket monitored whose criminal screens enrollment range\",\n  \"verified\" : true,\n  \"salary\" : 31900\n}"
+    }
+  ]
+}
